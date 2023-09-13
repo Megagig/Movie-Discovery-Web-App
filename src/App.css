@@ -10,9 +10,9 @@ a {
 
 .header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('./Images/Banner.jpg');
+    url('./assets/Poster.png');
 
-  height: 70vh;
+  height: 120vh;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -45,6 +45,8 @@ nav a {
 .search input {
   border: none;
   outline: none;
+  width: 100%;
+  color: white;
   background-color: transparent;
 }
 
@@ -61,6 +63,17 @@ nav a {
   justify-content: space-between;
 }
 
+.moviesample {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  padding-left: 40px;
+}
+
 .allmovies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -74,6 +87,96 @@ nav a {
   object-fit: cover;
 }
 
+.ri-search-line {
+  background-color: white;
+  padding: 5px;
+  color: black;
+}
+
+.movieDetail {
+  padding: 2rem 0;
+}
 .movieDetail img {
   width: 100%;
+}
+
+.movie-img {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+}
+
+.movie-info {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.movie-info h2 {
+  font-size: 32px;
+  margin: 1rem 0;
+}
+.overview {
+  text-align: left;
+}
+
+.runtime {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.favourite-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(180, 209, 78);
+  color: white;
+}
+
+.text {
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 800px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  height: 30vh;
+}
+
+.footer .socials {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+  font-size: 20px;
+  transform: scale(1.5);
+}
+
+.footer .footer-text {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer .copyright {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #6b7280;
 }

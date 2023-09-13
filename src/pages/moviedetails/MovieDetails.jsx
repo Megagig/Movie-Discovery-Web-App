@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState();
+  const favouriteMovie =
+    JSON.parse(localStorage.getItem('favouriteMovie')) || [];
   //   const [loading, setLoading] = useState(false);
   useEffect(() => {
     getMovie();
@@ -20,14 +22,33 @@ const MovieDetails = () => {
     console.log(data);
   }
 
+  const addToFavourite = () => {
+    favouriteMovie.push(movie);
+    localStorage.setItem('favouriteMovie', JSON.stringify(favouriteMovie));
+    console.log(favouriteMovie);
+  };
+
   return (
     <div>
       {movie && (
         <div className="movieDetail">
-          <img
-            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-            alt=""
-          />
+          <div className="movie-img">
+            <img
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              alt=""
+              width="50%"
+            />
+          </div>
+          <div className="movie-info">
+            <h2>{movie.title}</h2>
+
+            <p>{movie.release_date}</p>
+            <p className="runtime">{movie.runtime} minuites</p>
+            <p className="overview">{movie.overview}</p>
+            <button className="favourite-btn" onClick={addToFavourite}>
+              Add to Favourite
+            </button>
+          </div>
         </div>
       )}
     </div>
