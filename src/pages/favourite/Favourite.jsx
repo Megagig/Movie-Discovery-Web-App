@@ -1,9 +1,11 @@
 import React from 'react';
+import Nav from '../../components/nav/Nav';
 
 const Favourite = () => {
   const favouriteMovie = JSON.parse(localStorage.getItem('favouriteMovie'));
   return (
     <div>
+      <Nav />
       <h1>Favourite</h1>
       <ul>
         {favouriteMovie.map((movie) => (

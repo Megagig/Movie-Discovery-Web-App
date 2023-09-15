@@ -9,6 +9,7 @@ const Homepage = () => {
   const [loading, setLoading] = useState(false);
   const [allMovies, setAllMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState('');
   useEffect(() => {
     getMovies();
     getAllMovies();
@@ -17,7 +18,6 @@ const Homepage = () => {
     const response = await fetch('');
     const data = await response.json();
     // setMovies(data.results);
-    console.log(data);
   }
 
   async function movieSearch() {
@@ -28,8 +28,8 @@ const Homepage = () => {
     const data = await response.json();
     if (response) setLoading(false);
     if (response.ok) setAllMovies(data.results.slice(0, 10));
+    if (!response.ok) setError('Something went wrong, please try again latter');
     console.log(searchTerm);
-    console.log(data);
   }
 
   async function getAllMovies() {
@@ -40,12 +40,17 @@ const Homepage = () => {
     const data = await response.json();
     if (response) setLoading(false);
     if (response.ok) setAllMovies(data.results.slice(0, 10));
-    console.log(data);
+    if (!response.ok) setError('Something went wrong, please try again latter');
   }
   return (
     <div>
-      <Header setSearchTerm={setSearchTerm} movieSearch={movieSearch} />
-      <Movie allMovies={allMovies} loading={loading} />
+      <Header
+        setSearchTerm={setSearchTerm}
+        movieSearch={movieSearch}
+        error={error}
+      />
+      <Movie allMovies={allMovies} loading={loading} error={error} />
+
       <Footer />
     </div>
   );

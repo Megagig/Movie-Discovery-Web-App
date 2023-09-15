@@ -15,6 +15,7 @@ function App() {
           <Route path="/:id" element={<MovieDetails />} />
           <Route path="/favourite" element={<Favourite />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/Header" element={<Header />} />
         </Routes>
       </Router>
     </div>

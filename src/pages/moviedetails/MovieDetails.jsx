@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
+import Nav from '../../components/nav/Nav';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -30,6 +30,7 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <Nav />
       {movie && (
         <div className="movieDetail">
           <div className="movie-img">

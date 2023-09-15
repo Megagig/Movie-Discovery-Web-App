@@ -1,9 +1,8 @@
 import React from 'react';
 import Nav from '../nav/Nav';
-import moviecover from '../../assets/Poster.png';
 import descriptionBox from '../../assets/Description Box.png';
 
-const Header = ({ setSearchTerm, movieSearch }) => {
+const Header = ({ setSearchTerm, movieSearch, error }) => {
   return (
     <div className="header">
       <Nav setSearchTerm={setSearchTerm} movieSearch={movieSearch} />
@@ -23,6 +22,7 @@ const Header = ({ setSearchTerm, movieSearch }) => {
           {/* <div>Watch Trailler</div> */}
         </div>
       </div>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

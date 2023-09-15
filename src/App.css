@@ -204,4 +204,10 @@ nav a {
     padding: 1rem 4rem;
     gap: 10px;
   }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+  }
 }
